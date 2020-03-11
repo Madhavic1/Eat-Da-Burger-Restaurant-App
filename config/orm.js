@@ -30,6 +30,7 @@ function ObjectToSql(obj){
         }
         arr.push(key+"="+value);
     }
+    return arr.toString();
 }
 
 var orm = {

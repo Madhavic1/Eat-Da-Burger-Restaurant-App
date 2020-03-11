@@ -1,3 +1,3 @@
-INSERT INTO burgers (burger_name ,devoured ) VALUES ('Vegan BBQ Tofu Burger',false);
-INSERT INTO burgers (burger_name ,devoured ) VALUES ('Crispy Quinoa Burger',true);
-INSERT INTO burgers (burger_name ,devoured ) VALUES ('Portobello and Peach Burger',false);
+INSERT INTO burgers (burger_name) VALUES ('Vegan BBQ Tofu Burger');
+INSERT INTO burgers (burger_name  ) VALUES ('Crispy Quinoa Burger');
+INSERT INTO burgers (burger_name  ) VALUES ('Portobello and Peach Burger');
