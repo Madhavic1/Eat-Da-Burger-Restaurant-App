@@ -5,7 +5,7 @@ $(function(){
         var newBurger ={burger_name : $("#burger-name").val().trim()};
        if(newBurger.burger_name === "")
        {
-           alert('Enter a burger name to devour!!')
+        $("#myModal").modal("show");
             return;
        }
         //send the POST request

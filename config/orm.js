@@ -1,11 +1,6 @@
 //Import MySql connection
 var connection = require('../config/connection.js');
 
-// In the orm.js file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
-
-// selectAll()
-// insertOne()
-// updateOne()
 function printQuestionMarks(n){
     var arr= [];
     for(let i=0; i<n ; i++){
@@ -34,7 +29,7 @@ function ObjectToSql(obj){
 }
 
 var orm = {
-    selectAll: function(tableName,cb){ //select * from burgers
+    selectAll: function(tableName,cb){ 
         var queryString = "SELECT * FROM "+ tableName + ";";
         connection.query(queryString,function(err,result){
             if(err)
@@ -43,14 +38,12 @@ var orm = {
             }
             cb(result);
         });
-
     },
-    insertOne: function(tableName,cols,vals,cb){ //INSERT INTO burgers (burger_name,devoured) values ('Vegan BBQ Tofu Burger',false);
+    insertOne: function(tableName,cols,vals,cb){ 
         var queryString = "INSERT INTO "+ tableName ;
             queryString +=  "(" + cols.toString() + ")"; 
             queryString += "VALUES ";
             queryString += "(" + printQuestionMarks(vals.length) + ")";
-
             console.log(queryString);
          connection.query(queryString,vals,function(err,result){
              if(err)
@@ -58,7 +51,7 @@ var orm = {
             cb(result);
          });
     },
-    updateOne: function(tableName,colValObj,condition,cb){ //UPDATE burgers SET burger_name = 'chick pea burger' , devoured = false where id = 1;
+    updateOne: function(tableName,colValObj,condition,cb){ 
     var queryString = "UPDATE " + tableName + " SET " + ObjectToSql(colValObj) + " WHERE " + condition;
     console.log(queryString);
     connection.query(queryString,function(err,result){
@@ -68,10 +61,7 @@ var orm = {
         }
         cb(result);
     });
-
     }
 };
-
-
 // Export the ORM object in module.exports.
 module.exports = orm ;

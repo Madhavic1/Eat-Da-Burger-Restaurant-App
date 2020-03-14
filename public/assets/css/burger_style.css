@@ -1,3 +1,6 @@
+html,body{
+  box-sizing : border-box;
+}
 .bodyTag {
     background-color:#EFCC3C;
     background-size: cover;
