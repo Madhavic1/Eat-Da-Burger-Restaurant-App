@@ -4,6 +4,9 @@ var router = express.Router();
 
 //import the model burger.js to use its database functions
 var burger = require("../models/burger");
+router.get("/",(req,res)=>{
+    res.redirect("index");
+});
 
 //create all routes and set up logic within those routes where required
 router.get("/index",(req,res)=>{
